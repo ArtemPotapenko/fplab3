@@ -26,7 +26,7 @@ jobs:
         with:
           dotnet-version: '8.0.x'  
         
-      - name: Run test (HashSet)
+      - name: Run test
         run: cd test && dotnet test
 
     
