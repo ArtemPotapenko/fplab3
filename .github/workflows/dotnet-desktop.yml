@@ -37,7 +37,7 @@ jobs:
         run: fantomas src/Library/service/ArgsParserService.fs
 
       - name: Format code with Fantomas (Lib)
-        run: fantomas src/Library/service/MaibService.fs
+        run: fantomas src/Library/service/MainService.fs
       
       - name: Run test
         run: cd test && dotnet test
