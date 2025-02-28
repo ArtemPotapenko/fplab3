@@ -20,7 +20,25 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'  
-        
+
+      - name: Install Fantomas (Code Formatter)
+        run: dotnet tool install --create-manifest-if-needed -g Fantomas
+
+      - name: Format code with Fantomas (App)
+        run: fantomas src/App/Program.fs
+
+      - name: Format code with Fantomas (Lib)
+        run: fantomas src/Library/method/LinealInterpolation.fs && fantomas src/Library/method/NewtonInterpolation.fs
+      
+      - name: Format code with Fantomas (Lib)
+        run: fantomas src/Library/method/NewtonInterpolation.fs      
+      
+      - name: Format code with Fantomas (Lib)
+        run: fantomas src/Library/service/ArgsParserService.fs
+
+      - name: Format code with Fantomas (Lib)
+        run: fantomas src/Library/service/MaibService.fs
+      
       - name: Run test
         run: cd test && dotnet test
 

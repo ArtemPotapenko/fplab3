@@ -2,7 +2,6 @@ module test
 
 open NUnit.Framework
 open fplab3.lib.method.LinealInterpolation
-open fplab3.lib.method.LinealInterpolation.LinealInterpolation
 open fplab3.lib.method.NewtonInterpolation
 
 [<SetUp>]
