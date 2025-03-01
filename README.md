@@ -10,7 +10,7 @@
 
 Основной код, обеспечивающий выполнение в потоке:
 
-'''F#
+```F#
 
 let execute (arg: Args) (reader: Reader) =
         let methods = arg.methods |> List.filter ((<>) Method.None) |> List.distinct
@@ -72,14 +72,14 @@ let execute (arg: Args) (reader: Reader) =
 
         subExecute lin newton (fst point1) (fst point2) (newReader) 2
 
-'''
+```
 
 
 ## Реализация методов интерполирование
 
 Ньютон 
 
-'''F#
+```F#
 
 type Point = { x: double; y: double }
 
@@ -103,11 +103,11 @@ type Point = { x: double; y: double }
             newState
         else
             NewtonState(x, y, state.result, state.helpPoly, state.count + 1, state.points)
-'''
+```
 
 Линейная
 
-'''F#
+```F#
 
 module LinealInterpolation =
     type LinState(x: double, y: double, result: double -> double) =
@@ -121,4 +121,4 @@ module LinealInterpolation =
         LinState(x2, y2, f)
 
     let create x1 y1 = LinState(x1, y1, fun _ -> y1)
-'''
+```
