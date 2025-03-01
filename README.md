@@ -11,6 +11,7 @@
 Основной код, обеспечивающий выполнение в потоке:
 
 '''F#
+
 let execute (arg: Args) (reader: Reader) =
         let methods = arg.methods |> List.filter ((<>) Method.None) |> List.distinct
         let point1 = (getLine reader) |> parseStr
@@ -79,7 +80,8 @@ let execute (arg: Args) (reader: Reader) =
 Ньютон 
 
 '''F#
-ype Point = { x: double; y: double }
+
+type Point = { x: double; y: double }
 
     type NewtonState(x: double, y: double, result: double -> double, helpPoly: double -> double, count, set) =
         member this.result t =
@@ -106,6 +108,7 @@ ype Point = { x: double; y: double }
 Линейная
 
 '''F#
+
 module LinealInterpolation =
     type LinState(x: double, y: double, result: double -> double) =
         member val step = 1.0
